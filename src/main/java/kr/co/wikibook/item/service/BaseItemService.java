@@ -16,6 +16,7 @@ public class BaseItemService implements ItemService{
 
     @Override
     public List<ItemDTO> findAll() {
+
         return itemRepository.findAll().stream().map(Item::toRead).toList();
     }
 
