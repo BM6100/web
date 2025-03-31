@@ -18,8 +18,11 @@ public class AccountController {
 
     private final AccountHelper accountHelper;
 
+
+    //
     @PostMapping("/api/account/join")
     public ResponseEntity<?> join(@RequestBody AccountJoinRequestDTO joinReq) {
+
         if (!StringUtils.hasLength(joinReq.getName()) || !StringUtils.hasLength(joinReq.getLoginId()) || !StringUtils.hasLength(joinReq.getLoginPw())) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
